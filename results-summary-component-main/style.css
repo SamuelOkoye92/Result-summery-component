@@ -1,66 +1,317 @@
-
+/* variables */
 :root {
 /* The designs were created to the following widths: */
+--mobile: 375px;
+--desktop: 1440px;
+/* primary colors */
+--Light-red: hsl(0, 100%, 67%);
+--Orange-yellow: hsl(39, 100%, 56%);
+--Green-teal: hsl(166, 100%, 37%);
+--Cobalt-blue: hsl(234, 85%, 45%);
+
+/* Gradients background */
+--Light-slate-blue: hsl(252, 100%, 67%);
+--Light-royal-blue: hsl(241, 81%, 54%);
+/* Gradients circle */
+--Violet-blue: hsla(256, 72%, 46%, 1);
+--Persian-blue: hsla(241, 72%, 46%, 0);
+ /* Neutral */
+--White: hsl(0, 0%, 100%);
+--Pale-blue: hsl(221, 100%, 96%);
+--Light-lavender: hsl(241, 100%, 89%);
+--Dark-gray-blue: hsl(224, 30%, 27%);
+
+ /* Typography */
+--font-family: 'Hanken Grotesk', sans-serif;
+--Font-size-paragraphs: 18px
+--font-weights-medium: 500;
+--font-weights-bold: 700;
+--font-weights-ExtraBold: 800; 
 }
-
-
-## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-## Colors
-
-### Primary
-
-- Light red: hsl(0, 100%, 67%)
-- Orangey yellow: hsl(39, 100%, 56%)
-- Green teal: hsl(166, 100%, 37%)
-- Cobalt blue: hsl(234, 85%, 45%)
-
-## Gradients
-
-- Light slate blue (background): hsl(252, 100%, 67%)
-- Light royal blue (background): hsl(241, 81%, 54%)
-
-- Violet blue (circle): hsla(256, 72%, 46%, 1)
-- Persian blue (circle): hsla(241, 72%, 46%, 0)
-
-
-
-### Neutral
-
-- White: hsl(0, 0%, 100%)
-- Pale blue: hsl(221, 100%, 96%)
-- Light lavender: hsl(241, 100%, 89%)
-- Dark gray blue: hsl(224, 30%, 27%)
-
-### Notes
-
-Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`.
-
-## Typography
-
-### Body Copy
-
-- Font size (paragraphs): 18px
-
-### Font
-
-- Family: [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)
-- Weights: 500, 700, 800
 
 *,
 ::after,
 ::before {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+}
+
+.section-center{
+    background-color: var(--Pale-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--font-family);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--White);
+    width: 40%;
+    height: 55%;
+    border-radius: 5%;
+}
+
+
+.result-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(180deg, #6340FC 0%, #332DE9 100%);
+    color: var(--White);
+    height: 100%;
+    width: 50%;
+    border-radius: 5%;
+}
+#para-text{
+    color: var(--Light-lavender);
+}
+#score{
+    font-weight: var(--font-weights-ExtraBold);
+    font-size: 40px;
+}
+
+#overall-value{
+    font-weight: var(--font-weights-medium);
+    font-size: 12px;
+    color: var(--Light-lavender);;
+}
+
+#circle{
+    background: linear-gradient(180deg, #4A23CC 0%, #4533EB 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    width: 140px;
+    height: 140px;
+}
+
+.remark-details{
+    color: var(--Light-lavender);
+    padding: 0 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: var(--font-weights-medium);
+}
+
+/* style for summery */
+.summery-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: black;
+    height: 100%;
+    width: 50%;
+    padding: 20px 5px;
+    font-weight: var(--font-weights-bold);
+}
+
+#summery{
+    align-self: flex-start;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.percentage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.icon-title{
+    display: flex;
+    align-items: center;
+}
+
+.hund{
+    color: rgb(122, 122, 122);
+}
+
+.reaction{
+    background-color: hsla(0, 100%, 67%, 10%);
+}
+
+.memory{
+    background-color: hsla(39, 100%, 56%, 10%);
+}
+.verbal{
+    background-color: hsla(166, 100%, 37%, 10%);
+}
+.visual{
+    background-color: var(--Pale-blue);
+}
+
+
+#reaction{
+    color: var(--Light-red);
+    margin-left: 5px;
+}
+#memory{
+    color: var(--Orange-yellow);
+    margin-left: 5px;
+}
+#verbal{
+    color: var(--Green-teal);
+    margin-left: 5px;
+}
+#visual{
+    color: var(--Cobalt-blue);
+    margin-left: 5px;
+}
+
+.btn{
+    background-color: var(--Dark-gray-blue);
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    border-style: initial;
+    color: var(--White);
+}
+
+.btn:hover{
+    background: linear-gradient(180deg, #6340FC 0%, #332DE9 100%);
+}
+
+@media(max-width: 1000px) {
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--White);
+        width: 60%;
+        height: 55%;
+        border-radius: 5%;
+    }
+}
+
+@media(max-width: 650px) {
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--White);
+        width: 75%;
+        height: 55%;
+        border-radius: 5%;
+    }
+}
+
+
+/* MOBILE STYLE */
+@media(max-width: 500px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    
+    .result-container{
+    color: var(--White);
+    width: 100%;
+    border-radius: 0 0 5% 5%;
+    padding: 10px;
+    }
+
+    #para-text{
+        font-size: 22px; 
+        padding: 20px;
+    }
+
+    #score{
+    font-size: 80px;
+    }
+
+    #overall-value{
+    font-size: 20px;
+    }
+
+    #circle{
+    border-radius: 100px;
+    width: 190px;
+    height: 190px;
+    }
+
+    .remark{
+        font-size: 35px;
+        padding-top: 20px;
+    }
+
+    .remark-details{
+    padding: 20px;
+    font-size: 18px;
+    }
+
+
+/* style for summery */
+    .summery-container{
+    width: 100%;
+    font-weight: var(--font-weights-bold);
+    }
+
+    #summery{
+    font-size: 30px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    }
+
+    .percentage{
+    display: flex;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 10px 0;
+    }
+
+    img{
+    width: 35px;
+    }
+
+
+.btn{
+    width: 90%;
+    padding: 25px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    border-style: initial;
+    color: var(--White);
+}
+
+.btn:hover{
+    background: linear-gradient(180deg, #6340FC 0%, #332DE9 100%);
+}
+
+.attribution{
+    display: none;
+}
 }
 
 
 
+/* attribution design */
 .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+
